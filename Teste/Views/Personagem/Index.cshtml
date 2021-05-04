@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Teste.Models.Personagem>
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-light">Personagens de Monstros S.A</h2>
+        </div>
+        <div class="col-6 text-right">
+            <a asp-controller="Personagem" asp-action="Create" class="btn btn-success">Adicionar Personagem</a>
+        </div>
+    </div>
+    <br />
+
+    @if (Model.Count() > 0)
+    {
+
+        <table class="table table-bordered table-striped" width="100%">
+           
+            <thead>
+                <tr>
+                    <th>
+                        Nome do Personagem
+                    </th>
+                    <th>
+                        Cenário
+                    </th>
+                    <th>
+                        Alterações
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                    
+                
+                @foreach (var Personagem in Model)
+                {
+                    <tr>
+                        <td width="35%" style="font-family:Calibri"><b style="color:azure">@Personagem.PersonagemName</b></td>
+                        <td width="35%" style="font-family:Calibri"><b>@Personagem.Cenario</b></td>
+                        <td width="30%">
+                            <div class="w-100 btn-group" role="group">
+                                <a asp-controller="Personagem" asp-action="Update" asp-route-Id="@Personagem.Id" class="btn btn-primary mx-1">Editar</a>
+                                <a asp-controller="Personagem" asp-action="Delete" asp-route-Id="@Personagem.Id" class="btn btn-danger mx-1">Remover</a>
+                            </div>
+
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    }
+    else
+    {
+        <p>Nenhum personagem foi adicionado</p>
+    }
+
+
+
+
+</div>
+
