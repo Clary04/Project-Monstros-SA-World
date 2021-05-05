@@ -433,3 +433,8 @@ C:\Users\clari\Desktop\Teste\Teste\obj\Debug\net5.0\Razor\Views\Personagem\Index
 C:\Users\clari\Desktop\Teste\Teste\obj\Debug\net5.0\Razor\Views\Personagem\Create.cshtml.g.cs
 C:\Users\clari\Desktop\Teste\Teste\obj\Debug\net5.0\Razor\Views\Personagem\Delete.cshtml.g.cs
 C:\Users\clari\Desktop\Teste\Teste\obj\Debug\net5.0\Razor\Views\Personagem\Update.cshtml.g.cs
+C:\Users\clari\Desktop\Teste\Teste\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\clari\Desktop\Teste\Teste\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
+C:\Users\clari\Desktop\Teste\Teste\bin\Debug\net5.0\X.PagedList.dll
+C:\Users\clari\Desktop\Teste\Teste\bin\Debug\net5.0\X.PagedList.Mvc.Core.dll
+C:\Users\clari\Desktop\Teste\Teste\bin\Debug\net5.0\X.PagedList.Web.Common.dll

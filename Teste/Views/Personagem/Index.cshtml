@@ -1,4 +1,7 @@
-﻿@model IEnumerable<Teste.Models.Personagem>
+﻿@using X.PagedList.Mvc.Core;
+@using X.PagedList;
+
+@model IEnumerable<Teste.Models.Personagem>
 
 <div class="container p-3">
     <div class="row pt-4">
@@ -11,11 +14,19 @@
     </div>
     <br />
 
+    @Html.PagedListPager((IPagedList) Model, page => Url.Action("Index", new { page = page }),
+    new X.PagedList.Mvc.Core.Common.PagedListRenderOptions
+    {
+        DisplayItemSliceAndTotal = true,
+        ContainerDivClasses = new[]{ "navigation" }, 
+        LiElementClasses = new[] {"page-item"},
+        PageClasses = new[] {"page-link"}, 
+ })
+
     @if (Model.Count() > 0)
     {
+        <table id="tableData" class="table table-bordered table-striped" width="100%">
 
-        <table class="table table-bordered table-striped" width="100%">
-           
             <thead>
                 <tr>
                     <th>
@@ -30,9 +41,9 @@
                 </tr>
             </thead>
             <tbody>
-                
-                    
-                
+
+
+
                 @foreach (var Personagem in Model)
                 {
                     <tr>
@@ -56,7 +67,13 @@
         <p>Nenhum personagem foi adicionado</p>
     }
 
-
+    @section Scripts{ 
+        <script>
+            $(document).ready(function () {
+                $('ul.pagination > li.disabled > a').addClass('page-link');
+            })
+        </script>
+    }
 
 
 </div>
