@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Teste.Models;
+using X.PagedList;
 
 namespace Monstros_SA.Controllers
 {
@@ -17,13 +18,13 @@ namespace Monstros_SA.Controllers
             _db = db;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int ? page)
         {
-
-            IEnumerable<Personagem> objList = _db.Personagens;
-            return View(objList);
+            var pageNumber = page ?? 1;
+            int pageSize = 8;
+            var onePageOfStudents = (_db.Personagens.ToPagedList(pageNumber, pageSize));
+            return View(onePageOfStudents);
         }
-
         public IActionResult Create()
         {
             return View();
